@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import torchvision
 from torchvision import datasets, models, transforms
 import time
 import argparse
@@ -15,9 +14,10 @@ parser.add_argument(
     choices=[-1, 0, 1],
     type=int,
     default=0,
+    required=True,
 )
-parser.add_argument("-e", "--epoch", help="number of epochs")
-parser.add_argument("-bs", "--batch_size", help="number of batch size")
+parser.add_argument("-e", "--epoch", help="number of epochs", required=True)
+parser.add_argument("-bs", "--batch_size", help="number of batch size", required=True)
 opt = parser.parse_args()
 # device
 if opt.gpu_id == -1:
