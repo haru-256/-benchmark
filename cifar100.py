@@ -62,6 +62,7 @@ dataset_sizes = {phase: len(dataloaders[phase]) for phase in ["train", "val"]}
 model = models.resnet101(pretrained=True)
 num_in = model.fc.in_features
 model.fc = nn.Linear(num_in, 100)
+model.to(device)
 
 # Optimizer
 optimizer = optim.Adam(model.parameters(), lr=0.001)
