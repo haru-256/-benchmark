@@ -69,7 +69,7 @@ criterion = nn.CrossEntropyLoss()
 since = time.time()
 for epoch in tqdm(range(opt.epoch), desc="Epoch", unit="epoch"):
     # Each epoch has a training and validation phase
-    for phase in tqdm(["train", "val"]):
+    for phase in tqdm(["train", "val"], desc="Phase"):
 
         running_loss = 0.0
         running_corrects = 0
