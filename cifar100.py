@@ -59,12 +59,12 @@ dataloaders = {"train": trainloader, "val": testloader}
 dataset_sizes = {phase: len(dataloaders[phase]) for phase in ["train", "val"]}
 
 # モデル
-model = models.resnet101(pretrained=True, progress=True)
+model = models.resnet101(pretrained=True)
 num_in = model.fc.in_features
 model.fc = nn.Linear(num_in, 100)
 
 # Optimizer
-optimizer = optim.Adam(model.parameters(), lr=0.001, momentum=0.9)
+optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # loss
 criterion = nn.CrossEntropyLoss()
