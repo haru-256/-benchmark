@@ -16,8 +16,10 @@ parser.add_argument(
     default=0,
     required=True,
 )
-parser.add_argument("-e", "--epoch", help="number of epochs", required=True)
-parser.add_argument("-bs", "--batch_size", help="number of batch size", required=True)
+parser.add_argument("-e", "--epoch", help="number of epochs", required=True, type=int)
+parser.add_argument(
+    "-bs", "--batch_size", help="number of batch size", required=True, type=int
+)
 opt = parser.parse_args()
 # device
 if opt.gpu_id == -1:
